@@ -159,6 +159,13 @@ void MainWindow::on_BtnOnline_clicked()
 {
     if((ui->showInfo->isHidden ()&&ui->listWidgetUsers->isHidden ())||this->mode==2)
     {
+        if(this->mode==2)
+        {
+            ui->radioButton_1->setChecked (true);
+            ui->labelWho->setText ("My Pokemon");
+            ui->labelInfo->setText (this->getInfo (0));
+        }
+
         this->mode=1;//显示在线用户模式
         QByteArray data;
         QDataStream dsOut(&data,QIODevice::ReadWrite);
@@ -260,7 +267,7 @@ QDataStream &operator>>(QDataStream &stream, UserData &userData)
 
 void MainWindow::on_listWidgetUsers_currentRowChanged(int currentRow)
 {
-    if(currentRow!=-1&&this->mode==2)
+    if(currentRow>0&&this->mode==2)
     {
         ui->labelWho->setText (tr("%1's Pokemon").arg(this->allUsers[currentRow-1]->username));
         ui->radioButton_1->setChecked (true);
