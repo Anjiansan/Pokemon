@@ -26,7 +26,7 @@ QString Pokemon::getInformation()
 {
     QString information,temp;
     information=information+"name:"+name;
-    information=information+"\nkind:"+temp.setNum (kind);
+    information=information+"\nkind:"+KINDNAME[kind];
     information=information+"\nlevel:"+temp.setNum (level);
     information=information+"\nexperience:"+temp.setNum (experience);
     information=information+"\nattack:"+temp.setNum (attack);
@@ -34,6 +34,8 @@ QString Pokemon::getInformation()
     information=information+"\ncurrentBlood:"+temp.setNum (currentBlood);
     information=information+"\ndefense:"+temp.setNum (defense);
     information=information+"\nspeed:"+temp.setNum (speed);
+    information=information+"\nattr:"+ATTRKIND[attr];
+    information=information+"\nskill:"+ATTACKKIND[skill];
     information+='\n';
 
     return information;

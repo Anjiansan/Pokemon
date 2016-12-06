@@ -18,6 +18,17 @@ enum KIND//四种类型
     HIGH_ATTACK,HIGH_BLOOD,HIGH_DEFENSE,HIGH_SPEED
 };
 
+const QList<QString> POKEMONNAME={
+    "Feraligatr",//大力鳄
+    "Charizard",//喷火龙
+    "Noivern",//音波龙
+    "Bagon",//宝贝龙
+    "Glaceon",//冰伊布
+    "Pikachu",//皮卡丘
+    "Wynaut",//小果然
+    "Doduo",//嘟嘟
+};//pokemon名字
+
 enum SKILL//技能
 {
     HydroCannon,//加农水炮
@@ -31,13 +42,21 @@ enum SKILL//技能
     NormalAttack,//普通攻击
 };
 
+const QList<QString> KINDNAME={"HIGH ATTACK","HIGH BLOOD","HIGH DEFENSE","HIGH SPEED"};//类型名称
+
 const QList<QString> ATTACKKIND={"HydroCannon", "Cut", "LeechLife", "FocusEnergy",
                                  "Barrier", "LightScreen", "Counter", "TriAttack",
                                  "Attack"} ;//技能名称
 
-const uint R=5;
-const uint SR=6;
-const uint SSR=7;
+const QList<QString> ATTRKIND={"S","SS","SSS"};//属性名称
+
+enum QUALIFICATION{
+    S,SS,SSS
+};
+
+//const uint R=5;
+//const uint SR=6;
+//const uint SSR=7;
 const uint MAINR=100;
 const uint MAINSR=150;
 const uint MAINSSR=200;
@@ -71,6 +90,7 @@ protected:
     uint defense;     //防御属性
     uint speed;       //敏捷属性
     uint kind;        //种类
+    uint attr;        //稀有度
     SKILL skill;       //技能
 
     void setValues(uint baseAttack, uint baseBlood, uint baseDefense, uint baseSpeed);
