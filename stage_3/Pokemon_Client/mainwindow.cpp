@@ -45,13 +45,27 @@ MainWindow::MainWindow(QWidget *parent, Login *login) :
     ui->comboBox->setHidden (true);
     ui->BtnConfirm->setHidden (true);
     ui->labelSPkm->setHidden (true);
-    ui->labelBadge->setHidden (true);
 
-    QPalette pa;//设置字体颜色
-    pa.setColor(QPalette::WindowText,Qt::blue);
-    ui->labelBadge->setPalette(pa);
+//    QPalette pa;//设置字体颜色
+//    pa.setColor(QPalette::WindowText,Qt::AutoColor);
+//    ui->labelInfo->setPalette(pa);
+//    ui->labelSPkm->setPalette (pa);
 
 //    layout ()->setSizeConstraint (QLayout::SetFixedSize);
+    ui->labelInfo->setObjectName ("labelInfo");
+    ui->labelInfo->setStyleSheet ("#labelInfo{border-image:url(:/img/"+
+                                  this->pkm[0]->name+".png);}");
+
+    ui->labelSPkm->setObjectName ("labelSPkm");
+
+    ui->labelNumBadge->setObjectName ("labelNumBadge");
+    ui->labelNum->setText ("The Badge of Pkm Number:");
+    ui->labelAdvBadge->setObjectName ("labelAdvBadge");
+    ui->labelAdv->setText ("The Badge of Advanced Pkm Number:");
+    ui->labelNum->setHidden (true);
+    ui->labelNumBadge->setHidden (true);
+    ui->labelAdv->setHidden (true);
+    ui->labelAdvBadge->setHidden (true);
 }
 
 MainWindow::~MainWindow()
@@ -239,6 +253,8 @@ void MainWindow::on_BtnOnline_clicked()
             ui->CbxUser->setCurrentIndex (0);//显示当前用户的Pokemon
             ui->labelWho->setText (tr("%1's Pokemon").arg(this->username));
             ui->labelInfo->setText (this->getInfo (0));
+            ui->labelInfo->setStyleSheet ("#labelInfo{border-image:url(:/img/"+
+                                          this->pkm[0]->name+".png);}");
         }
 
         this->mode=1;//显示在线用户模式
@@ -315,6 +331,8 @@ void MainWindow::on_BtnAllUsers_clicked()
         ui->CbxUser->setCurrentIndex (0);
         ui->labelWho->setText (tr("%1's Pokemon").arg(this->username));
         ui->labelInfo->setText (this->getInfo (0));
+        ui->labelInfo->setStyleSheet ("#labelInfo{border-image:url(:/img/"+
+                                      this->pkm[0]->name+".png);}");
     }
 }
 
@@ -349,6 +367,8 @@ void MainWindow::on_listWidgetUsers_currentRowChanged(int currentRow)
             ui->CbxUser->addItem (this->allUsers[currentRow-1]->pkm[i]->name);
         ui->CbxUser->setCurrentIndex (0);
         ui->labelInfo->setText (this->getInfo (0));
+        ui->labelInfo->setStyleSheet ("#labelInfo{border-image:url(:/img/"+
+                                      this->allUsers[currentRow-1]->pkm[0]->name+".png);}");
     }
 }
 
@@ -380,6 +400,8 @@ void MainWindow::on_BtnUpgrade_clicked()//反复显示和隐藏
         ui->comboBox->setHidden (false);
         ui->BtnConfirm->setHidden (false);
         ui->labelSPkm->setHidden (false);
+        ui->labelSPkm->setStyleSheet ("#labelSPkm{border-image:url(:/img/"+
+                                          this->adminPkm[0]->name+".png);}");
     }
     else
     {
@@ -420,6 +442,8 @@ void MainWindow::on_BtnDuel_clicked()//反复显示和隐藏
         ui->comboBox->setHidden (false);
         ui->BtnConfirm->setHidden (false);
         ui->labelSPkm->setHidden (false);
+        ui->labelSPkm->setStyleSheet ("#labelSPkm{border-image:url(:/img/"+
+                                          this->adminPkm[0]->name+".png);}");
     }
     else
     {
@@ -440,6 +464,8 @@ void MainWindow::on_CbxUser_currentIndexChanged(int index)
     }
     //正常序号
     ui->labelInfo->setText (this->getInfo (index));
+    ui->labelInfo->setStyleSheet ("#labelInfo{border-image:url(:/img/"+
+                                  this->pkm[index]->name+".png);}");
 }
 
 void MainWindow::on_BtnConfirm_clicked()
@@ -487,6 +513,8 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
     }
     //正常序号
     ui->labelSPkm->setText (this->getAdmPkmInfo (index));
+    ui->labelSPkm->setStyleSheet ("#labelSPkm{border-image:url(:/img/"+
+                                      this->adminPkm[index]->name+".png);}");
 }
 
 void MainWindow::recvResult(bool isWin)
@@ -677,11 +705,21 @@ void MainWindow::on_BtnBadge_toggled(bool checked)
         else
             badgeAdvanced="Golden";
 
-        ui->labelBadge->setText ("The Number of Pkm:"+badgeNum+
-                                 "\nThe Number of Advanced Pkm:"+badgeAdvanced);
+        ui->labelNumBadge->setStyleSheet ("#labelNumBadge{border-image:url(:/img/"+
+                                      badgeNum+".png);}");
+        ui->labelAdvBadge->setStyleSheet ("#labelAdvBadge{border-image:url(:/img/"+
+                                      badgeAdvanced+".png);}");
 
-        ui->labelBadge->setHidden (false);
+        ui->labelNum->setHidden (false);
+        ui->labelNumBadge->setHidden (false);
+        ui->labelAdv->setHidden (false);
+        ui->labelAdvBadge->setHidden (false);
     }
     else
-        ui->labelBadge->setHidden (true);
+    {
+        ui->labelNum->setHidden (true);
+        ui->labelNumBadge->setHidden (true);
+        ui->labelAdv->setHidden (true);
+        ui->labelAdvBadge->setHidden (true);
+    }
 }

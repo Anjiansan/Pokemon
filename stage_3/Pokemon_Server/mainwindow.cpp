@@ -24,25 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     this->adminPkmLen=10;
-    for(uint i=0;i<3;i++)//随机生成3个一级系统小精灵
-    {
-        this->CreateOnePkm (i,1);
-    }
-
-    for(uint i=0;i<3;i++)//随机生成3个中级系统小精灵
-    {
-        this->CreateOnePkm (i,2);
-    }
-
-    for(uint i=0;i<2;i++)//随机生成2个高级系统小精灵
-    {
-        this->CreateOnePkm (i,3);
-    }
-
-    for(uint i=0;i<2;i++)//随机生成2个满级系统小精灵
-    {
-        this->CreateOnePkm (i,4);
-    }
 }
 
 MainWindow::~MainWindow()
@@ -620,6 +601,28 @@ void MainWindow::readPendingDatagrams()
     {
         dsIn>>port;
         dsOut<<GETADMINPKM;
+
+        this->adminPkm.clear ();
+        for(uint i=0;i<3;i++)//随机生成3个一级系统小精灵
+        {
+            this->CreateOnePkm (i,1);
+        }
+
+        for(uint i=0;i<3;i++)//随机生成3个中级系统小精灵
+        {
+            this->CreateOnePkm (i,2);
+        }
+
+        for(uint i=0;i<2;i++)//随机生成2个高级系统小精灵
+        {
+            this->CreateOnePkm (i,3);
+        }
+
+        for(uint i=0;i<2;i++)//随机生成2个满级系统小精灵
+        {
+            this->CreateOnePkm (i,4);
+        }
+
         this->SentAdminPkm (dsOut);
         QHostAddress serverAddress = QHostAddress("127.0.0.1");
         client->writeDatagram(dataOut.data(), dataOut.size(),serverAddress, port);

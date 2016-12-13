@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/Wynaut.png</file>
+        <file>img/Pikachu.png</file>
+        <file>img/Noivern.png</file>
+        <file>img/Glaceon.png</file>
+        <file>img/Feraligatr.png</file>
+        <file>img/Doduo.png</file>
+        <file>img/Charizard.png</file>
+        <file>img/Bagon.png</file>
+        <file>img/Silver.png</file>
+        <file>img/Bronze.png</file>
+        <file>img/Golden.png</file>
+        <file>img/Pokemon.png</file>
+    </qresource>
+</RCC>

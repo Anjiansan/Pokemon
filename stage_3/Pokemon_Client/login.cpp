@@ -23,6 +23,9 @@ Login::Login(QWidget *parent) :
 //        qDebug()<<isOk;
     }
 //    connect(server, SIGNAL(readyRead()),this, SLOT(readPendingDatagrams()));
+
+    this->setObjectName ("Login");
+    this->setStyleSheet ("#Login{border-image:url(:/img/Pokemon.png);}");
 }
 
 Login::~Login()

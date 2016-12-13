@@ -9,6 +9,8 @@ SelectPkm::SelectPkm(QWidget *parent) :
 
     connect(this,SIGNAL(sentSelectResult(uint)),
             this->parentWidget (),SLOT(recvSelectResult(uint)));
+
+    ui->labelPkmInfo->setObjectName ("labelPkmInfo");
 }
 
 SelectPkm::~SelectPkm()
@@ -45,17 +47,23 @@ void SelectPkm::recvSelect(QList<UDPPkm *> pkmList, uint *pkmIndex)
     this->pkmIndex=pkmIndex;
 
     ui->comboBoxPkm->clear ();
-    for(uint i=0;i<pkmList.length ();i++)
+    for(int i=0;i<pkmList.length ();i++)
         ui->comboBoxPkm->addItem (pkmList[i]->name);
     ui->comboBoxPkm->setCurrentIndex (0);
 
     ui->labelPkmInfo->setText (this->getInfo (0));
+    ui->labelPkmInfo->setStyleSheet ("#labelPkmInfo{border-image:url(:/img/"+
+                                  this->pkms[0]->name+".png);}");
 }
 
 void SelectPkm::on_comboBoxPkm_currentIndexChanged(int index)
 {
     if(index>=0&&index<this->pkms.length ())
+    {
         ui->labelPkmInfo->setText (this->getInfo (index));
+        ui->labelPkmInfo->setStyleSheet ("#labelPkmInfo{border-image:url(:/img/"+
+                                      this->pkms[index]->name+".png);}");
+    }
 }
 
 void SelectPkm::on_BtnCfm_clicked()

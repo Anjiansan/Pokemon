@@ -37,3 +37,6 @@ FORMS    += mainwindow.ui \
     login.ui \
     fight.ui \
     selectpkm.ui
+
+RESOURCES += \
+    img.qrc

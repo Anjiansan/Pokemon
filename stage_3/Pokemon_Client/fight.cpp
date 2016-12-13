@@ -29,6 +29,9 @@ Fight::Fight(QWidget *parent) :
     ui->labelOppoA->setPalette (pa);
 
     connect(this,SIGNAL(sendResult(bool)),this->parentWidget (),SLOT(recvResult(bool)));
+
+    ui->labelUserPkm->setObjectName ("labelUserPkm");
+    ui->labelAdmPkm->setObjectName ("labelAdmPkm");
 }
 
 Fight::~Fight()
@@ -87,6 +90,11 @@ void Fight::endFight()
 
 void Fight::recvMsg(UDPPkm *self, UDPPkm *opponent)
 {
+    ui->labelUserPkm->setStyleSheet ("#labelUserPkm{border-image:url(:/img/"+
+                                  self->name+".png);}");
+    ui->labelAdmPkm->setStyleSheet ("#labelAdmPkm{border-image:url(:/img/"+
+                                  opponent->name+".png);}");
+
     ui->progressBarSe->setRange (0,self->currentBlood);
     ui->progressBarSe->setValue (self->currentBlood);
     ui->progressBarOp->setRange (0,opponent->currentBlood);
