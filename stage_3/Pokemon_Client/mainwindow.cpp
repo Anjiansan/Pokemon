@@ -328,6 +328,9 @@ void MainWindow::on_BtnAllUsers_clicked()
 
         this->mode=0;//不显示的模式
 
+        ui->CbxUser->clear ();
+        for(uint i=0;i<this->userPkmNum;i++)
+            ui->CbxUser->addItem (this->pkm[i]->name);
         ui->CbxUser->setCurrentIndex (0);
         ui->labelWho->setText (tr("%1's Pokemon").arg(this->username));
         ui->labelInfo->setText (this->getInfo (0));
