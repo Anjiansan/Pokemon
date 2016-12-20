@@ -2,3 +2,5 @@ stage_1/build-Pomemon-Desktop_Qt_5_7_0_GCC_64bit-Debug/
 stage_1/.qmake.stash
 stage_2/build-Pokemon_Client-Desktop_Qt_5_7_0_GCC_64bit-Debug/
 stage_2/build-Pokemon_Server-Desktop_Qt_5_7_0_GCC_64bit-Debug/
+stage_3/Build_Server/
+stage_3/Build_Client/

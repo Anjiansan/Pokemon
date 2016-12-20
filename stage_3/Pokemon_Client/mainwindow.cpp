@@ -46,10 +46,10 @@ MainWindow::MainWindow(QWidget *parent, Login *login) :
     ui->BtnConfirm->setHidden (true);
     ui->labelSPkm->setHidden (true);
 
-//    QPalette pa;//设置字体颜色
-//    pa.setColor(QPalette::WindowText,Qt::AutoColor);
-//    ui->labelInfo->setPalette(pa);
-//    ui->labelSPkm->setPalette (pa);
+    QPalette pa;//设置字体颜色
+    pa.setColor(QPalette::WindowText,QColor(255,60,0));
+    ui->labelInfo->setPalette(pa);
+    ui->labelSPkm->setPalette (pa);
 
 //    layout ()->setSizeConstraint (QLayout::SetFixedSize);
     ui->labelInfo->setObjectName ("labelInfo");

@@ -37,12 +37,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::CreatePkm(QString user)
 {
+    qsrand((unsigned)time(NULL));
     for(int i=0;i<3;i++)
     {
-        qsrand ((unsigned)time(NULL)*i);//随机类型
+//        qsrand ((unsigned)time(NULL)*i);//随机类型
         uint kind=qrand ()%4;
 
-        qsrand ((unsigned)time(NULL)*i*kind);//随机属性
+//        qsrand ((unsigned)time(NULL)*i*kind);//随机属性
         uint qualification=qrand ()%10;
         if(qualification<7)//70%几率S
             qualification=S;
@@ -51,7 +52,7 @@ void MainWindow::CreatePkm(QString user)
         else//10%几率S
             qualification=SSS;
 
-        qsrand ((unsigned)time(NULL)*i*kind*qualification);//随机技能
+//        qsrand ((unsigned)time(NULL)*i*kind*qualification);//随机技能
         switch (kind) {
         case 0://HIGH_ATTACK
         {
@@ -113,10 +114,10 @@ void MainWindow::CreatePkm(QString user)
 
 void MainWindow::CreateOnePkm(uint index, uint pkmLevel)
 {
-    qsrand ((unsigned)time(NULL)*index);//随机类型
+//    qsrand ((unsigned)time(NULL)*index);//随机类型
     uint kind=qrand ()%4;
 
-    qsrand ((unsigned)time(NULL)*index*kind);//随机属性
+//    qsrand ((unsigned)time(NULL)*index*kind);//随机属性
     uint qualification=qrand ()%10;
     if(qualification<5)//50%几率S
         qualification=S;
@@ -125,7 +126,7 @@ void MainWindow::CreateOnePkm(uint index, uint pkmLevel)
     else//20%几率SSS
         qualification=SSS;
 
-    qsrand ((unsigned)time(NULL)*index*kind*qualification);//随机技能
+//    qsrand ((unsigned)time(NULL)*index*kind*qualification);//随机技能
     switch (kind) {
     case 0://HIGH_ATTACK
     {
@@ -602,6 +603,7 @@ void MainWindow::readPendingDatagrams()
         dsIn>>port;
         dsOut<<GETADMINPKM;
 
+        qsrand((unsigned)time(NULL));
         this->adminPkm.clear ();
         for(uint i=0;i<3;i++)//随机生成3个一级系统小精灵
         {
