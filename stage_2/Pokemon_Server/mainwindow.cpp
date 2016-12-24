@@ -168,6 +168,7 @@ void MainWindow::SentAllUsers(uint port)
     while(query.next ())
     {
         dsOut<<query.value (0).toString ();
+//        qDebug()<<query.value (0).toString ();
         this->SentPkm (dsOut,query.value (0).toString ());
     }
 
@@ -207,7 +208,7 @@ void MainWindow::readPendingDatagrams()
             user.port=port;
             this->onlineUsers.append (user);
 
-            query.exec ("insert into users values(\""+username+"\",\""+pwd+"\");");
+            query.exec ("insert into users values(\""+username+"\",\""+pwd+"\",0,0);");
             this->CreatePkm (username);
             dsOut<<SIGNUPOK;
             SentPkm (dsOut,username);

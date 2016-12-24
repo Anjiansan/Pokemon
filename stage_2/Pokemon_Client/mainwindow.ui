@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>651</width>
-    <height>397</height>
+    <width>668</width>
+    <height>406</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1,0">
       <item>
        <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,4">
         <item row="1" column="0" colspan="2">
@@ -98,7 +98,7 @@
         <item>
          <widget class="QPushButton" name="BtnLoginOut">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -124,7 +124,7 @@
         <item>
          <widget class="QPushButton" name="BtnOnline">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -150,7 +150,7 @@
         <item>
          <widget class="QPushButton" name="BtnAllUsers">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -188,8 +188,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>651</width>
-     <height>26</height>
+     <width>668</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>

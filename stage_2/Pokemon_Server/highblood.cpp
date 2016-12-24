@@ -2,7 +2,8 @@
 
 HighBlood::HighBlood(uint qualification,uint skillIndex)
 {
-    this->name="HIGH_BLOOD";
+//    this->name="HIGH_BLOOD";
+    this->name=POKEMONNAME[skillIndex];
     this->kind=HIGH_BLOOD;
     this->attr=qualification;
     this->skill=skillIndex;

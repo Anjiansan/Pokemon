@@ -19,6 +19,17 @@ enum KIND//四种类型
     HIGH_ATTACK,HIGH_BLOOD,HIGH_DEFENSE,HIGH_SPEED
 };
 
+const QList<QString> POKEMONNAME={
+    "Feraligatr",//大力鳄
+    "Charizard",//喷火龙
+    "Noivern",//音波龙
+    "Bagon",//宝贝龙
+    "Glaceon",//冰伊布
+    "Pikachu",//皮卡丘
+    "Wynaut",//小果然
+    "Doduo",//嘟嘟
+};//pokemon名字
+
 enum SKILL//技能
 {
     HydroCannon,//加农水炮

@@ -2,7 +2,8 @@
 
 HighSpeed::HighSpeed(uint qualification,uint skillIndex)
 {
-    this->name="HIGH_Speed";
+//    this->name="HIGH_Speed";
+    this->name=POKEMONNAME[skillIndex];
     this->kind=HIGH_SPEED;
     this->attr=qualification;
     this->skill=skillIndex;

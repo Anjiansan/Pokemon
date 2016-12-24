@@ -2,7 +2,8 @@
 
 HighDefense::HighDefense(uint qualification,uint skillIndex)
 {
-    this->name="HIGH_DEFENSE";
+//    this->name="HIGH_DEFENSE";
+    this->name=POKEMONNAME[skillIndex];
     this->kind=HIGH_DEFENSE;
     this->attr=qualification;
     this->skill=skillIndex;

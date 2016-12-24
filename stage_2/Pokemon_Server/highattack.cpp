@@ -2,7 +2,8 @@
 
 HighAttack::HighAttack(uint qualification,uint skillIndex)
 {
-    this->name="HIGH_ATTRACK";
+//    this->name="HIGH_ATTRACK";
+    this->name=POKEMONNAME[skillIndex];
     this->kind=HIGH_ATTACK;
     this->attr=qualification;
     this->skill=skillIndex;

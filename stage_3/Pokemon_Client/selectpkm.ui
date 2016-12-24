@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>346</width>
+    <width>423</width>
     <height>333</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
        <item>
         <widget class="QLabel" name="labelInfo">
          <property name="text">
-          <string>Please a Pokemon to Send</string>
+          <string>Select a Pokemon to Send</string>
          </property>
         </widget>
        </item>
