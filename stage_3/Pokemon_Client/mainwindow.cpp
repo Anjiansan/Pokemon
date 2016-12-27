@@ -61,7 +61,7 @@ MainWindow::MainWindow(QWidget *parent, Login *login) :
     ui->labelNumBadge->setObjectName ("labelNumBadge");
     ui->labelNum->setText ("The Badge of Pkm Number:");
     ui->labelAdvBadge->setObjectName ("labelAdvBadge");
-    ui->labelAdv->setText ("The Badge of Advanced Pkm Number:");
+    ui->labelAdv->setText ("The Badge of Advanced Pkm:");
     ui->labelNum->setHidden (true);
     ui->labelNumBadge->setHidden (true);
     ui->labelAdv->setHidden (true);
